@@ -1,126 +1,108 @@
+<section id="home" class="slideshow">
+    <div class="slideshow-container">
+     
+        <div class="slide active">
+            <div class="slide-image" style="background-image: url('media/slide1.jpg'); background-color: #2e86c1;"></div>
+            <div class="slide-content">
+                <h2>Creating a Resilient and Healthy Society</h2>
+                <p>Improving lives and promoting dignity through integrated, community-driven solutions in Nutrition, Health, WASH, and Protection services.</p>
+                <a href="#contact" class="btn">Get Involved</a>
+            </div>
+        </div>
+        
+    
+        <div class="slide">
+            <div class="slide-image" style="background-image: url('media/slide2.jpg'); background-color: #27ae60;"></div>
+            <div class="slide-content">
+                <h2>Nutrition & Health Programs</h2>
+                <p>Addressing malnutrition and health challenges in Northeast Nigeria with sustainable solutions.</p>
+                <a href="#what-we-do" class="btn">Learn More</a>
+            </div>
+        </div>
+        
+       
+        <div class="slide">
+            <div class="slide-image" style="background-image: url('media/slide3.jpg'); background-color: #2980b9;"></div>
+            <div class="slide-content">
+                <h2>WASH Initiatives</h2>
+                <p>Combatting waterborne diseases through sustainable water and sanitation solutions in vulnerable communities.</p>
+                <a href="#what-we-do" class="btn">Our Programs</a>
+            </div>
+        </div>
+        
+       
+        <div class="slide">
+            <div class="slide-image" style="background-image: url('media/slide4.jpg'); background-color: #e67e22;"></div>
+            <div class="slide-content">
+                <h2>Education in Emergency</h2>
+                <p>Ensuring safe and inclusive education for all children in conflict-affected areas of Northeast Nigeria.</p>
+                <a href="#contact" class="btn">Support Us</a>
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="slide-nav">
+        <button class="slide-prev">&#10094;</button>
+        <div class="slide-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+        <button class="slide-next">&#10095;</button>
+    </div>
+</section>
+
 // Slideshow functionality
-class Slideshow {
-    constructor() {
-        this.slides = document.querySelectorAll('.slide');
-        this.dots = document.querySelectorAll('.dot');
-        this.prevBtn = document.querySelector('.slide-prev');
-        this.nextBtn = document.querySelector('.slide-next');
-        this.currentSlide = 0;
-        this.slideInterval = null;
-        this.autoPlayDelay = 5000; // 5 seconds
-        
-        this.init();
-    }
-    
-    init() {
-        // Event listeners
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.prevSlide());
-        }
-        
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.nextSlide());
-        }
-        
-        // Dot navigation
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevButton = document.querySelector('.slide-prev');
+    const nextButton = document.querySelector('.slide-next');
+    let currentSlide = 0;
+
+    // Function to show a specific slide
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
         });
-        
-        // Start autoplay
-        this.startAutoPlay();
-        
-        // Pause autoplay on hover
-        const slideshow = document.querySelector('.slideshow');
-        if (slideshow) {
-            slideshow.addEventListener('mouseenter', () => this.stopAutoPlay());
-            slideshow.addEventListener('mouseleave', () => this.startAutoPlay());
-        }
-        
-        // Touch swipe support
-        this.addTouchSupport();
-    }
-    
-    showSlide(index) {
-        // Hide all slides
-        this.slides.forEach(slide => slide.classList.remove('active'));
-        this.dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Show current slide
-        this.slides[index].classList.add('active');
-        this.dots[index].classList.add('active');
-        
-        this.currentSlide = index;
-    }
-    
-    nextSlide() {
-        let next = this.currentSlide + 1;
-        if (next >= this.slides.length) {
-            next = 0;
-        }
-        this.showSlide(next);
-    }
-    
-    prevSlide() {
-        let prev = this.currentSlide - 1;
-        if (prev < 0) {
-            prev = this.slides.length - 1;
-        }
-        this.showSlide(prev);
-    }
-    
-    goToSlide(index) {
-        this.showSlide(index);
-    }
-    
-    startAutoPlay() {
-        this.stopAutoPlay(); // Clear existing interval
-        this.slideInterval = setInterval(() => {
-            this.nextSlide();
-        }, this.autoPlayDelay);
-    }
-    
-    stopAutoPlay() {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-        }
-    }
-    
-    addTouchSupport() {
-        const slideshow = document.querySelector('.slideshow-container');
-        if (!slideshow) return;
-        
-        let startX = 0;
-        let endX = 0;
-        
-        slideshow.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
         });
-        
-        slideshow.addEventListener('touchmove', (e) => {
-            endX = e.touches[0].clientX;
-        });
-        
-        slideshow.addEventListener('touchend', () => {
-            const diff = startX - endX;
-            const minSwipeDistance = 50;
-            
-            if (Math.abs(diff) > minSwipeDistance) {
-                if (diff > 0) {
-                    this.nextSlide(); // Swipe left
-                } else {
-                    this.prevSlide(); // Swipe right
-                }
-            }
-        });
+        currentSlide = index;
     }
-}
+
+    // Show the next slide
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+
+    // Show the previous slide
+    function prevSlide() {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+    }
+
+    // Add event listeners to navigation buttons
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Add event listeners to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-play the slideshow every 5 seconds
+    setInterval(nextSlide, 5000);
+});
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize slideshow
     if (document.querySelector('.slideshow')) {
-        new Slideshow();
+        // Slideshow initialization removed as 'Slideshow' is undefined
     }
     
     // Mobile menu functionality
@@ -183,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === #${currentSection}) {
+            if (link.getAttribute('href') === `#${currentSection}`) {
                 link.classList.add('active');
             }
         });
@@ -193,3 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', setActiveNavItem);
     setActiveNavItem();
 })
+
+// Ensure this script tag is included in the HTML file, not in the JavaScript file.
+// <script src="js/script.js"></script>

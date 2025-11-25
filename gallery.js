@@ -1,5 +1,8 @@
-// Include the stylesheet in the HTML file where this script is used.
-// Ensure the gallery section exists in the HTML file with the appropriate class.
+// <link rel="stylesheet" href="css/style.css">
+
+// <section class="gallery-section">
+//     <!-- Gallery content goes here -->
+// </section>
 
 // Gallery functionality
 class Gallery {
