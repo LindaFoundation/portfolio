@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Linda Foundation - Improving Lives in Nigeria</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -22,18 +23,67 @@
                     <li><a href="#what-we-do">What We Do</a></li>
                     <li><a href="#updates">Updates</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Creating a Resilient and Healthy Society</h2>
-            <p>Improving lives and promoting dignity through integrated, community-driven solutions in Nutrition, Health, WASH, and Protection services.</p>
-            <a href="#contact" class="btn">Get Involved</a>
+    <!-- Slideshow Section -->
+    <section id="home" class="slideshow">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('media/slide1.jpg');"></div>
+                <div class="slide-content">
+                    <h2>Creating a Resilient and Healthy Society</h2>
+                    <p>Improving lives and promoting dignity through integrated, community-driven solutions in Nutrition, Health, WASH, and Protection services.</p>
+                    <a href="#contact" class="btn">Get Involved</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('media/slide2.jpg');"></div>
+                <div class="slide-content">
+                    <h2>Nutrition & Health Programs</h2>
+                    <p>Addressing malnutrition and health challenges in Northeast Nigeria with sustainable solutions.</p>
+                    <a href="#what-we-do" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('media/slide3.jpg');"></div>
+                <div class="slide-content">
+                    <h2>WASH Initiatives</h2>
+                    <p>Combatting waterborne diseases through sustainable water and sanitation solutions in vulnerable communities.</p>
+                    <a href="#what-we-do" class="btn">Our Programs</a>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('media/slide4.jpg');"></div>
+                <div class="slide-content">
+                    <h2>Education in Emergency</h2>
+                    <p>Ensuring safe and inclusive education for all children in conflict-affected areas of Northeast Nigeria.</p>
+                    <a href="#contact" class="btn">Support Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Navigation -->
+        <div class="slide-nav">
+            <button class="slide-prev">&#10094;</button>
+            <div class="slide-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+            <button class="slide-next">&#10095;</button>
         </div>
     </section>
 
@@ -64,56 +114,72 @@
             </div>
             <div class="programs-grid">
                 <div class="program-card">
-                    <div class="program-img">🍎</div>
+                    <div class="program-img">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Nutrition</h3>
                         <p>In Northeast Nigeria, The Linda Foundation employs various strategies and interventions to address the Nutrition sector's challenges.</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">💧</div>
+                    <div class="program-img">
+                        <i class="fas fa-tint"></i>
+                    </div>
                     <div class="program-content">
                         <h3>WASH</h3>
                         <p>We implement sustainable WASH interventions in Northeast Nigeria to combat waterborne diseases and improve health through rehabilitation of boreholes, latrines and handwashing facilities while promoting hygiene education.</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">🛡</div>
+                    <div class="program-img">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Protection</h3>
                         <p>The Linda Foundation denounces all forms of human rights violations before, during and after crisis, especially those of children (child protection) and Women (GBV). Our interventions are geared towards supporting and assisting victims to become more empowered.</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">🏥</div>
+                    <div class="program-img">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Health</h3>
                         <p>We support programming for Mental Health and Psychosocial Support (MHPSS) and Sexual and Reproductive Health (SRH).</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">📚</div>
+                    <div class="program-img">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Education</h3>
                         <p>Through our programming, we ensure safe and inclusive education for all in all situations, including Education in Emergency (EIE).</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">🌱</div>
+                    <div class="program-img">
+                        <i class="fas fa-seedling"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Backyard Gardening</h3>
                         <p>The Linda Foundation promotes backyard gardening to enhance household nutrition and food security in communities.</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">📢</div>
+                    <div class="program-img">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Advocacy</h3>
                         <p>Through our public and private advocacy, we raise awareness of Humanitarian crisis and the needs of affected people. We advocate for the health and protection of Children, Girl child and Women and respect National and International law.</p>
                     </div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img">💼</div>
+                    <div class="program-img">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
                     <div class="program-content">
                         <h3>Early Recovery & Livelihoods</h3>
                         <p>Strengthen access to livelihoods by creating income-generating opportunities, improving access to live skill acquisition, and basic social services, and supporting social cohesion through working for and with communities.</p>
@@ -228,6 +294,7 @@
                         <li><a href="#what-we-do">What We Do</a></li>
                         <li><a href="#updates">Updates</a></li>
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>

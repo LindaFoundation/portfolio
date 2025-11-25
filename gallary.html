@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - The Linda Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="media/logo.png" alt="The Linda Foundation Logo">
+                <h1>The Linda Foundation</h1>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#vision-mission">Vision & Mission</a></li>
+                    <li><a href="index.html#what-we-do">What We Do</a></li>
+                    <li><a href="index.html#updates">Updates</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Capturing moments of impact, hope, and transformation in the communities we serve</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+                <button class="filter-btn" data-filter="wash">WASH</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="health">Health</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="nutrition">
+                    <div class="gallery-image">
+                        <img src="media/gallery/nutrition-program-1.jpg" alt="Nutrition Program">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/nutrition-program-1.jpg" data-title="Community Nutrition Program" data-description="Our team distributing nutritional supplements to children in Borno State">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Community Nutrition Program</h3>
+                        <p>Distributing nutritional supplements and providing education to mothers in remote communities of Northeast Nigeria.</p>
+                        <span class="gallery-date">June 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="wash">
+                    <div class="gallery-image">
+                        <img src="media/gallery/wash-project-1.jpg" alt="WASH Project">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/wash-project-1.jpg" data-title="Borehole Rehabilitation" data-description="Newly rehabilitated borehole providing clean water to over 500 people">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Borehole Rehabilitation</h3>
+                        <p>Newly rehabilitated borehole providing clean drinking water to over 500 people in a rural community.</p>
+                        <span class="gallery-date">May 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="education">
+                    <div class="gallery-image">
+                        <img src="media/gallery/education-program-1.jpg" alt="Education Program">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/education-program-1.jpg" data-title="Education in Emergency" data-description="Children attending classes in our temporary learning spaces">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Education in Emergency</h3>
+                        <p>Children attending classes in our temporary learning spaces designed for conflict-affected areas.</p>
+                        <span class="gallery-date">April 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="health">
+                    <div class="gallery-image">
+                        <img src="media/gallery/health-campaign-1.jpg" alt="Health Campaign">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/health-campaign-1.jpg" data-title="Health Awareness Campaign" data-description="Community health workers conducting awareness sessions">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Health Awareness Campaign</h3>
+                        <p>Our community health workers conducting awareness sessions on maternal and child health.</p>
+                        <span class="gallery-date">March 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="community">
+                    <div class="gallery-image">
+                        <img src="media/gallery/community-outreach-1.jpg" alt="Community Outreach">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/community-outreach-1.jpg" data-title="Community Engagement" data-description="Meeting with community leaders to discuss needs and solutions">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Community Engagement</h3>
+                        <p>Meeting with community leaders and stakeholders to discuss local needs and co-create solutions.</p>
+                        <span class="gallery-date">February 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="nutrition">
+                    <div class="gallery-image">
+                        <img src="media/gallery/nutrition-program-2.jpg" alt="Nutrition Workshop">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/nutrition-program-2.jpg" data-title="Nutrition Workshop" data-description="Mothers learning about balanced diets and child nutrition">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Nutrition Workshop</h3>
+                        <p>Mothers participating in our nutrition workshop, learning about balanced diets and child feeding practices.</p>
+                        <span class="gallery-date">January 2023</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="wash">
+                    <div class="gallery-image">
+                        <img src="media/gallery/wash-project-2.jpg" alt="Hygiene Promotion">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/wash-project-2.jpg" data-title="Hygiene Promotion" data-description="Teaching proper handwashing techniques to school children">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Hygiene Promotion</h3>
+                        <p>Teaching proper handwashing techniques and hygiene practices to school children in our program areas.</p>
+                        <span class="gallery-date">December 2022</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="education">
+                    <div class="gallery-image">
+                        <img src="media/gallery/education-program-2.jpg" alt="School Supplies">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-image="media/gallery/education-program-2.jpg" data-title="School Supplies Distribution" data-description="Distributing learning materials to students in emergency settings">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>School Supplies Distribution</h3>
+                        <p>Distributing learning materials and school supplies to students in emergency-affected communities.</p>
+                        <span class="gallery-date">November 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&#10094;</button>
+            <button class="lightbox-next">&#10095;</button>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-info">
+                <h3 class="lightbox-title"></h3>
+                <p class="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>The Linda Foundation</h3>
+                    <p>Improving lives and promoting dignity through integrated, community-driven solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#vision-mission">Vision & Mission</a></li>
+                        <li><a href="index.html#what-we-do">What We Do</a></li>
+                        <li><a href="index.html#updates">Updates</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li><a href="index.html#what-we-do">Nutrition</a></li>
+                        <li><a href="index.html#what-we-do">WASH</a></li>
+                        <li><a href="index.html#what-we-do">Protection</a></li>
+                        <li><a href="index.html#what-we-do">Health</a></li>
+                        <li><a href="index.html#what-we-do">Education</a></li>
+                        <li><a href="index.html#what-we-do">Backyard Gardening</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Shop No. 12 Opposite Northeast Development Commission, Polo Road, Maiduguri, Borno State. Nigeria.</li>
+                        <li>+234 916 879 8112</li>
+                        <li>thelindafoundation.ngo@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 The Linda Foundation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>

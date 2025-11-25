@@ -1,5 +1,129 @@
-// Mobile menu toggle
+// Slideshow functionality
+class Slideshow {
+    constructor() {
+        this.slides = document.querySelectorAll('.slide');
+        this.dots = document.querySelectorAll('.dot');
+        this.prevBtn = document.querySelector('.slide-prev');
+        this.nextBtn = document.querySelector('.slide-next');
+        this.currentSlide = 0;
+        this.slideInterval = null;
+        this.autoPlayDelay = 5000; // 5 seconds
+        
+        this.init();
+    }
+    
+    init() {
+        // Event listeners
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+        }
+        
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+        }
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Start autoplay
+        this.startAutoPlay();
+        
+        // Pause autoplay on hover
+        const slideshow = document.querySelector('.slideshow');
+        if (slideshow) {
+            slideshow.addEventListener('mouseenter', () => this.stopAutoPlay());
+            slideshow.addEventListener('mouseleave', () => this.startAutoPlay());
+        }
+        
+        // Touch swipe support
+        this.addTouchSupport();
+    }
+    
+    showSlide(index) {
+        // Hide all slides
+        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        this.slides[index].classList.add('active');
+        this.dots[index].classList.add('active');
+        
+        this.currentSlide = index;
+    }
+    
+    nextSlide() {
+        let next = this.currentSlide + 1;
+        if (next >= this.slides.length) {
+            next = 0;
+        }
+        this.showSlide(next);
+    }
+    
+    prevSlide() {
+        let prev = this.currentSlide - 1;
+        if (prev < 0) {
+            prev = this.slides.length - 1;
+        }
+        this.showSlide(prev);
+    }
+    
+    goToSlide(index) {
+        this.showSlide(index);
+    }
+    
+    startAutoPlay() {
+        this.stopAutoPlay(); // Clear existing interval
+        this.slideInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoPlayDelay);
+    }
+    
+    stopAutoPlay() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+        }
+    }
+    
+    addTouchSupport() {
+        const slideshow = document.querySelector('.slideshow-container');
+        if (!slideshow) return;
+        
+        let startX = 0;
+        let endX = 0;
+        
+        slideshow.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        slideshow.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+        
+        slideshow.addEventListener('touchend', () => {
+            const diff = startX - endX;
+            const minSwipeDistance = 50;
+            
+            if (Math.abs(diff) > minSwipeDistance) {
+                if (diff > 0) {
+                    this.nextSlide(); // Swipe left
+                } else {
+                    this.prevSlide(); // Swipe right
+                }
+            }
+        });
+    }
+}
+
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize slideshow
+    if (document.querySelector('.slideshow')) {
+        new Slideshow();
+    }
+    
+    // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
     
@@ -32,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Simple form submission handling
+    // Contact form handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -42,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add active class to current navigation item
+    // Active navigation highlighting
     function setActiveNavItem() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav ul li a');
@@ -68,4 +192,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call on scroll and page load
     window.addEventListener('scroll', setActiveNavItem);
     setActiveNavItem();
-});
+})
